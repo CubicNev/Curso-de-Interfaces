@@ -4,6 +4,7 @@
 #   Tambien pueden mostrar IMAGENES
 from tkinter import *
 
+
 # ---------- Ventana ---------- #
 v = Tk()
 

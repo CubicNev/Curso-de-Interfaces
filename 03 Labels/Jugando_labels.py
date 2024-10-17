@@ -5,7 +5,7 @@ from tkinter import *
 v = Tk()
 
 # --------- Frame contenedor ---------- #
-frame = Frame(v, width=500, height=400) 
+frame = Frame(v, width=500, height=400)
 frame.pack()
 
 # --------- Label ---------- #
