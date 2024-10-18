@@ -4,7 +4,6 @@ from tkinter import filedialog
 root = Tk()
 ruta = StringVar()
 
-
 def abreFichero():
     fichero = filedialog.askopenfilename(title="Abrir", initialdir="C:", filetypes=(
         ("Ficheros de Exel", "*.xlsx"), ("Ficheros de texto", "*.txt"), ("Todos los ficheros", "*.*")))

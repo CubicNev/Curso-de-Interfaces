@@ -14,10 +14,8 @@ def opcionesViaje():
     opcionEscogida=""
     if(playa.get()==1):
         opcionEscogida += "Playa"
-    
     if(mointain.get()==1):
         opcionEscogida += "Montaña"
-    
     if(turismoR.get()==1):
         opcionEscogida += "Turismo Rural"
 

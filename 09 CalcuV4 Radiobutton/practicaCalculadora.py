@@ -2,15 +2,11 @@ from tkinter import *
 
 raiz=Tk()
 
-miFrame=Frame(raiz)
-
+miFrame = Frame(raiz)
 miFrame.pack()
-
-operacion=""
-
-reset_pantalla=False
-
-resultado=0
+operacion = ""
+reset_pantalla = False
+resultado = 0
 
 
 #-------------pantalla---------------------------------------
@@ -25,84 +21,48 @@ pantalla.config(background="black", fg="#03f943", justify="right")
 #-------------------pulsaciones teclado--------------------------
 
 def numeroPulsado(num):
-
-	global operacion
-
-	global reset_pantalla
+	global operacion, reset_pantalla
 
 	if reset_pantalla!=False:
-
 		numeroPantalla.set(num)
-
 		reset_pantalla=False
-
 	else:
-	
 		numeroPantalla.set(numeroPantalla.get() + num)
 
 
 #----------------funcion suma----------------------------------
 
 def suma(num):
-
-	global operacion
-
-	global resultado
-
-	global reset_pantalla
+	global operacion, resultado, reset_pantalla
 
 	resultado+=int(num) #resultado=resultado+int(num)
-
 	operacion="suma"
-
 	reset_pantalla=True
-
 	numeroPantalla.set(resultado)
 
 
 
 #---------------funcion resta------------------------------
 num1=0
-
 contador_resta=0
 
 def resta(num):
-
-	global operacion
-
-	global resultado
-
-	global num1
-
-	global contador_resta
-
-	global reset_pantalla
+	global operacion, resultado, num1, contador_resta, reset_pantalla
 
 	if contador_resta==0:
-
 		num1=int(num)
-
 		resultado=num1
-
 	else:
-
 		if contador_resta==1:
-
 			resultado=num1-int(num)
-
 		else:
-
 			resultado=int(resultado)-int(num)	
 
 		numeroPantalla.set(resultado)
-
 		resultado=numeroPantalla.get()
 
-
 	contador_resta=contador_resta+1
-
 	operacion="resta"
-
 	reset_pantalla=True
 
 
@@ -110,85 +70,42 @@ def resta(num):
 contador_multi=0
 
 def multiplica(num):
+	global operacion, resultado, num1, contador_multi, reset_pantalla
 
-	global operacion
-
-	global resultado
-
-	global num1
-
-	global contador_multi
-
-	global reset_pantalla
-	
 	if contador_multi==0:
-
 		num1=int(num)
-		
 		resultado=num1
-
 	else:
-
 		if contador_multi==1:
-
 			resultado=num1*int(num)
-
 		else:
-
 			resultado=int(resultado)*int(num)	
-
 		numeroPantalla.set(resultado)
-		
 		resultado=numeroPantalla.get()
 
-
 	contador_multi=contador_multi+1
-
 	operacion="multiplicacion"
-
 	reset_pantalla=True
 
 #-----------------funcion division---------------------
-
 contador_divi=0
 
 def divide(num):
+	global operacion, resultado, num1, contador_divi, reset_pantalla
 
-	global operacion
-
-	global resultado
-
-	global num1
-
-	global contador_divi
-
-	global reset_pantalla
-	
 	if contador_divi==0:
-
 		num1=float(num)
-		
 		resultado=num1
-
 	else:
-
 		if contador_divi==1:
-
 			resultado=num1/float(num)
-
 		else:
-
-			resultado=float(resultado)/float(num)	
-
+			resultado=float(resultado)/float(num)
 		numeroPantalla.set(resultado)
-		
 		resultado=numeroPantalla.get()
 
-
 	contador_divi=contador_divi+1
-
 	operacion="division"
-
 	reset_pantalla=True
 
 
@@ -196,49 +113,23 @@ def divide(num):
 #----------------funcion el_resultado----------------
 
 def el_resultado():
-
-	global resultado
-
-	global operacion
-
-	global contador_resta
-
-	global contador_multi
-
-	global contador_divi
-	
+	global resultado, operacion, contador_resta, contador_multi, contador_divi
 
 	if operacion=="suma":
-
 		numeroPantalla.set(resultado+int(numeroPantalla.get()))
-
 		resultado=0
-
 	elif operacion=="resta":
-
 		numeroPantalla.set(int(resultado)-int(numeroPantalla.get()))
-
 		resultado=0
-
 		contador_resta=0
-
 	elif operacion=="multiplicacion":
-
 		numeroPantalla.set(int(resultado)*int(numeroPantalla.get()))
-
 		resultado=0
-
 		contador_multi=0
-
 	elif operacion=="division":
-
 		numeroPantalla.set(int(resultado)/int(numeroPantalla.get()))
-
 		resultado=0
-
 		contador_divi=0
-
-	
 
 
 
